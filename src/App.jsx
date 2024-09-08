@@ -7,7 +7,7 @@ import Login from "./Components/Login";
 import Editpost from "./Components/Editpost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from "./Components/Contact";
-//import { BrowserRouter as Router, Route, Link, Routes, useParams } from 'react-router-dom';
+
 
 function App() {
 
