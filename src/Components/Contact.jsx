@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -67,7 +68,7 @@ const Contact = () => {
         className="container-fluid"
         style={{
           backgroundImage:
-            "url('https://img.freepik.com/premium-vector/man-with-blue-shirt-blue-shirt-has-green-eyes_169196-13007.jpg')",
+            "url('https://th.bing.com/th/id/R.95214c79f1143d4a5bcf8d3f0dca8701?rik=8GoS3xKNkCJEfg&riu=http%3a%2f%2fwww.donbur.co.uk%2fgb-en%2fimages%2fuploads%2fcontact-background.jpg&ehk=IuizX1TJ9YR7xlNM65GqAzPWMjKwUWlQT3YanQGmGTU%3d&risl=&pid=ImgRaw&r=0')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -128,7 +129,7 @@ const Contact = () => {
           className="container mt-5"
           style={{
             backgroundImage:
-              "url('https://th.bing.com/th/id/OIP.PyJbDNG38QBr9AXCxTRJgQHaEK?rs=1&pid=ImgDetMain')",
+              "url('https://cdn.elearningindustry.com/wp-content/uploads/2017/10/4-tips-for-implementing-an-effective-elearning-strategy.jpg')",
           }}
         >
           <div
@@ -229,22 +230,22 @@ const Contact = () => {
               <div className="col-2"></div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-facebook"></i>
+                  <a href="https://www.facebook.com/bankole.azeez.940?mibextid=ZbWKwL"><i className="bi bi-facebook text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-twitter"></i>
+                  <a href="https://x.com/BankoleAzeezBa2"><i className="bi bi-twitter text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-telegram"></i>
+                  <a href="https://wa.me/message/WAVWLMSBJZMNI1"><i className="bi bi-whatsapp text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/bankole-azeez-babatunde-9a59772a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i className="bi bi-linkedin text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2"></div>

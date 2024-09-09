@@ -91,16 +91,18 @@ const Home = () => {
               salad, each dish tells its own story.
             </p>
             <div className="pt-5 pb-5 me-2">
-              <i className="bi bi-facebook p-3"></i>{" "}
-              <i className="bi bi-twitter p-3"></i>
-              <i className="bi bi-linkedin p-3"></i>{" "}
-              <i className="bi bi-telegram p-3"></i>
+              <a href="https://www.facebook.com/bankole.azeez.940?mibextid=ZbWKwL"><i className="bi bi-facebook p-3 text-white"></i></a>{" "}
+              <a href="https://x.com/BankoleAzeezBa2"><i className="bi bi-twitter p-3 text-white"></i></a>
+              <a href="https://www.linkedin.com/in/bankole-azeez-babatunde-9a59772a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i className="bi bi-linkedin p-3 text-white"></i></a>{" "}
+              <a href="https://wa.me/message/WAVWLMSBJZMNI1"><i className="bi bi-whatsapp p-3 text-white"></i></a>
             </div>
             <strong>
               Get regular update on latest trends in food and drinks
             </strong>{" "}
             <br />
+            <Link to={"/Contact"}>
             <button className="btn btn-light mt-3">Contact Me</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -162,7 +164,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="row mt-5 text-light">
+          <div className="row mt-5 text-light" id={"service"}>
             <div className="col-sm-6 bg-danger mt-2 p-5 rounded">
               <strong>OUR SERVICES</strong>
               <h4>We Will Help Your Health Growing</h4>
@@ -212,7 +214,7 @@ const Home = () => {
               <h2>
                 <i className="bi bi-people bg-light p-3 rounded-circle"></i>
               </h2>
-              <h4 id="About">About Our Company</h4>
+              <h4 id={"About"}>About Our Company</h4>
             </div>
             <div className="col-sm-8"></div>
           </div>
@@ -348,9 +350,11 @@ const Home = () => {
               existing one, we're here to help you start strong and bring your
               vision to life with delicious results.
             </p>
+           <Link to={"/Contact"}>
             <h2 className="btn bg-danger shadow-lg pt-3 pb-3 rounded text-white">
               <i className="bi bi-telephone"></i> Contact Us Today
             </h2>
+           </Link>
           </div>
         </div>
       </div>
@@ -378,22 +382,22 @@ const Home = () => {
               <div className="col-2"></div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-facebook"></i>
+                  <a href="https://www.facebook.com/bankole.azeez.940?mibextid=ZbWKwL"><i className="bi bi-facebook text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-twitter"></i>
+                  <a href="https://x.com/BankoleAzeezBa2"><i className="bi bi-twitter text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-telegram"></i>
+                  <a href="https://wa.me/message/WAVWLMSBJZMNI1"><i className="bi bi-whatsapp text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2">
                 <h2>
-                  <i className="bi bi-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/bankole-azeez-babatunde-9a59772a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i className="bi bi-linkedin text-white"></i></a>
                 </h2>
               </div>
               <div className="col-2"></div>
