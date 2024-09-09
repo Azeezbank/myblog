@@ -166,7 +166,7 @@ function AllPost() {
                     >
                       <img
                         className="thumbnail"
-                        src="https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg"
+                        src="https://www.anandnaturecure.in/wp-content/uploads/2019/01/natural-food.jpg"
                         alt="img"
                       />
                       <h3 className="pt-4">{post.title}</h3>
@@ -208,7 +208,7 @@ function AllPost() {
                 >
                   <img
                     className="thumbnail"
-                    src="https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg"
+                    src="https://www.anandnaturecure.in/wp-content/uploads/2019/01/natural-food.jpg"
                     alt="img"
                   />
 

@@ -124,7 +124,7 @@ function PostDetail() {
         <div className="card car p-5">
           <img
             className="thumbnail"
-            src="https://tunstelecom.com.ng/wp-content/uploads/2024/08/images-15.jpeg"
+            src="https://www.anandnaturecure.in/wp-content/uploads/2019/01/natural-food.jpg"
             alt="img"
           />
           <h3 className="pt-4 text-dark">{post.title}</h3>

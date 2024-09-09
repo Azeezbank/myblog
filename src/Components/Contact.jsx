@@ -128,7 +128,7 @@ const Contact = () => {
           className="container mt-5"
           style={{
             backgroundImage:
-              "url('https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg')",
+              "url('https://th.bing.com/th/id/OIP.PyJbDNG38QBr9AXCxTRJgQHaEK?rs=1&pid=ImgDetMain')",
           }}
         >
           <div
