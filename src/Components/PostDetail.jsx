@@ -6,23 +6,20 @@ function PostDetail() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
 
-  const [name, setName] = useState(''); // To store name input
-  const [comment, setComment] = useState(''); // To store comment input
+  const [name, setName] = useState(""); // To store name input
+  const [comment, setComment] = useState(""); // To store comment input
   const [submittedData, setSubmittedData] = useState([]);
 
-
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('comments')) || [];
+    const storedData = JSON.parse(localStorage.getItem("comments")) || [];
     setSubmittedData(storedData);
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
     if (submittedData.length > 0) {
-      localStorage.setItem('comments', JSON.stringify(submittedData));
+      localStorage.setItem("comments", JSON.stringify(submittedData));
     }
   }, [submittedData]);
-  
-  
 
   useEffect(() => {
     fetch(`https://backend-i9tl.onrender.com/api/posts/${id}`)
@@ -32,10 +29,12 @@ useEffect(() => {
   }, [id]);
 
   if (!post) {
-    return <h1 className="text-danger text-center pt-5"><div className="spinner-border"></div>Loading...</h1>;
+    return (
+      <h1 className="text-danger text-center pt-5">
+        <div className="spinner-border"></div>Loading...
+      </h1>
+    );
   }
-
-
 
   // Function to handle form submission
   const handleSubmit = (e) => {
@@ -46,18 +45,17 @@ useEffect(() => {
       setSubmittedData([...submittedData, { name, comment }]);
 
       // Clear input fields
-      setName('');
-      setComment('');
+      setName("");
+      setComment("");
     }
   };
-
 
   // Function to handle deleting a comment
   const handleDelete = (index) => {
     const updatedComments = submittedData.filter((_, i) => i !== index);
     setSubmittedData(updatedComments);
   };
-  
+
   return (
     <>
       <nav className="navbar navbar-expand-md bg-danger bg-gradient fixed-top">
@@ -81,39 +79,37 @@ useEffect(() => {
             <ul className="navbar-nav">
               <hr />
               <Link to="/" className="link">
-              <li className="nav-item">
-                <span href="." className="nav-link">
-                  HOME
-                </span>
-              </li>
-            </Link>
-              <Link to='/' className="link">
-              <li className="nav-item">
-                <span className="nav-link">
-                  <span>ABOUT Us</span>
-                </span>
-              </li>
-                </Link>
-              <Link to="/AllPost" className="link">
+                <li className="nav-item">
+                  <span href="." className="nav-link">
+                    HOME
+                  </span>
+                </li>
+              </Link>
+              <Link to="/" className="link">
                 <li className="nav-item">
                   <span className="nav-link">
-                    BLOG
+                    <span>ABOUT Us</span>
                   </span>
+                </li>
+              </Link>
+              <Link to="/AllPost" className="link">
+                <li className="nav-item">
+                  <span className="nav-link">BLOG</span>
                 </li>{" "}
               </Link>
-              <Link to='/' className="link">
-              <li className="nav-item">
-                <span className="nav-link">
-                 <span> SERVICE </span>
-                </span>
-              </li>
+              <Link to="/" className="link">
+                <li className="nav-item">
+                  <span className="nav-link">
+                    <span> SERVICE </span>
+                  </span>
+                </li>
               </Link>
               <Link to="/Login" className="link">
-              <li className="nav-item">
-              <span className="nav-link" href="">
-              My Account
-              </span>
-              </li>
+                <li className="nav-item">
+                  <span className="nav-link" href="">
+                    My Account
+                  </span>
+                </li>
               </Link>
 
               <button className="btn bg-light text-dark btn- rounded-pill">
@@ -139,46 +135,80 @@ useEffect(() => {
           <p className="pt-3">{post.content}</p>
         </div>
 
-
-
         {/* Displaying the submitted data */}
-      <h3 className="text-danger mt-5 ms-5">Submitted Comments:</h3>
-      <ul>
-        {submittedData.map((entry, index) => (
-          <li className="border p-3 m-3 bg-white" style={{listStyle:'none'}} key={index}>
-            <strong>Name: {entry.name}:</strong> <p>Comment: {entry.comment}</p>
-            <button className="bg-danger text-white rounded border ms-3" onClick={() => handleDelete(index)}>Delete Comment</button>
-          </li>
-        ))}
-      </ul>
-
-
-        
+        <h3 className="text-danger mt-5 ms-5">Submitted Comments:</h3>
+        <ul>
+          {submittedData.map((entry, index) => (
+            <li
+              className="border p-3 m-3 bg-white"
+              style={{ listStyle: "none" }}
+              key={index}
+            >
+              <strong>Name: {entry.name}:</strong>{" "}
+              <p>Comment: {entry.comment}</p>
+              <button
+                className="bg-danger text-white rounded border ms-3"
+                onClick={() => handleDelete(index)}
+              >
+                Delete Comment
+              </button>
+            </li>
+          ))}
+        </ul>
 
         <div className="card car p-5 mt-5">
           <h6>Leave a Comment</h6>
-          <p>Your email address will not be publish. The requied fields are marked *</p>
+          <p>
+            Your email address will not be publish. The requied fields are
+            marked *
+          </p>
           <form onSubmit={handleSubmit}>
-            <textarea className="form-control mt-4 bg-light" rows={5} value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Type here..."></textarea>
+            <textarea
+              className="form-control mt-4 bg-light"
+              rows={5}
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              placeholder="Type here..."
+            ></textarea>
 
             <div className="row">
               <div className="col-sm-4">
-                <input className="form-control mt-4 bg-light" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name*" required/>
+                <input
+                  className="form-control mt-4 bg-light"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Name*"
+                  required
+                />
               </div>
               <div className="col-sm-4">
-                <input className="form-control mt-4 bg-light" type="email" placeholder="Email*" required/>
+                <input
+                  className="form-control mt-4 bg-light"
+                  type="email"
+                  placeholder="Email*"
+                  required
+                />
               </div>
               <div className="col-sm-4">
-                <input className="form-control mt-4 bg-light" type="text" placeholder="Website" />
+                <input
+                  className="form-control mt-4 bg-light"
+                  type="text"
+                  placeholder="Website"
+                />
               </div>
-              </div>
-              <div>
-              <button type="submit" className="bg-danger border mt-5 p-3 text-white">Post Comment<i className="bi bi-chevron-double-right"></i></button>
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="bg-danger border mt-5 p-3 text-white"
+              >
+                Post Comment<i className="bi bi-chevron-double-right"></i>
+              </button>
             </div>
           </form>
         </div>
       </div>
-
 
       <div className="container-fluid bg-danger p-5 pt-3 text-center text-white">
         <div className="row mt-5 mb-5">
@@ -225,16 +255,19 @@ useEffect(() => {
             </div>
           </div>
           <div className="col-sm-8">
-
             <div className="row">
               <div className="col-sm-8 pt-5">
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
-                <p>Experience the joy of culinary exploration, where each recipe, reviews
-                  and tip nourishes the soul just like a melody ot a masterpiece. Let our content inspire
-                  your next meal.
+                <p>
+                  Experience the joy of culinary exploration, where each recipe,
+                  reviews and tip nourishes the soul just like a melody ot a
+                  masterpiece. Let our content inspire your next meal.
                 </p>
                 <h3>Stay Connected</h3>
-                <p>I share delicious and thoughtfully curated content occasionally-no spam, just the good stuff. Promise.</p>
+                <p>
+                  I share delicious and thoughtfully curated content
+                  occasionally-no spam, just the good stuff. Promise.
+                </p>
               </div>
               <div className="col-sm-4 pt-5">
                 <h3>ADDRESS</h3>
@@ -246,7 +279,10 @@ useEffect(() => {
       </div>
 
       <div className="container-fluid border-top border-light bg-danger text-center text-light p-5">
-      <p>Copyright 2024 Bankky Blogger || Alright Reserve <br/> Subscribe for newsletter</p>
+        <p>
+          Copyright 2024 Bankky Blogger || Alright Reserve <br /> Subscribe for
+          newsletter
+        </p>
       </div>
     </>
   );

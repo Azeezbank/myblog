@@ -61,9 +61,9 @@ const Home = () => {
               </Link>
 
               <Link to="/Contact" className="link">
-              <button className="btn bg-light text-dark btn- rounded-pill">
-                LET'S TALK
-              </button>
+                <button className="btn bg-light text-dark btn- rounded-pill">
+                  LET'S TALK
+                </button>
               </Link>
             </ul>
           </div>
@@ -71,27 +71,36 @@ const Home = () => {
       </nav>
 
       <div
-        className="container-fluid first text-center text-light p-5 bg-danger" style={{backgroundImage:"url('https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg')", backgroundSize:'cover', backgroundPosition:'center', backgroundRepeat:'no-repeat'}}
+        className="container-fluid first text-center text-light p-5 bg-danger"
+        style={{
+          backgroundImage:
+            "url('https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="topb">
           <div className="topt">
-        <h6 className="top">Best Drinks and Delicacies By</h6>
-        <h3 className="p-4">Bankky B</h3>
-        <p className="paragraph">
-          Food not only satisfies our hunger but also brings people together,
-          creating shared experiences and memories. From the rich aroma of a
-          freshly baked loaf to the vibrant colors of a fruit salad, each dish
-          tells its own story.
-        </p>
-        <div className="pt-5 pb-5 me-2">
-          <i className="bi bi-facebook p-3"></i>{" "}
-          <i className="bi bi-twitter p-3"></i>
-          <i className="bi bi-linkedin p-3"></i>{" "}
-          <i className="bi bi-telegram p-3"></i>
-        </div>
-        <strong>Get regular update on latest trends in food and drinks</strong>{" "}
-        <br />
-        <button className="btn btn-light mt-3">Contact Me</button>
+            <h6 className="top">Best Drinks and Delicacies By</h6>
+            <h3 className="p-4">Bankky B</h3>
+            <p className="paragraph">
+              Food not only satisfies our hunger but also brings people
+              together, creating shared experiences and memories. From the rich
+              aroma of a freshly baked loaf to the vibrant colors of a fruit
+              salad, each dish tells its own story.
+            </p>
+            <div className="pt-5 pb-5 me-2">
+              <i className="bi bi-facebook p-3"></i>{" "}
+              <i className="bi bi-twitter p-3"></i>
+              <i className="bi bi-linkedin p-3"></i>{" "}
+              <i className="bi bi-telegram p-3"></i>
+            </div>
+            <strong>
+              Get regular update on latest trends in food and drinks
+            </strong>{" "}
+            <br />
+            <button className="btn btn-light mt-3">Contact Me</button>
           </div>
         </div>
       </div>
@@ -217,7 +226,6 @@ const Home = () => {
             nutritional advice.{" "}
           </p>
 
-          
           <div className="row mt-4 text-start">
             <div className="col-sm-1">
               <h2>

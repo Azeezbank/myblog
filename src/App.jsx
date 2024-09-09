@@ -8,19 +8,12 @@ import Editpost from "./Components/Editpost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from "./Components/Contact";
 
-
 function App() {
-
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-                <Home />
-            }
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/AllPost" element={<AllPost />} />
           <Route path="/PostDetail/:id" element={<PostDetail />} />
           <Route path="/Login" element={<Login />} />

@@ -84,31 +84,32 @@
 
 // export default Editpost;
 
-
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Editpost = () => {
   const { id } = useParams(); // Get post ID from URL params
   const navigate = useNavigate();
   const [post, setPost] = useState({
-    title: '',
-    author_name: '',
-    content: '',
+    title: "",
+    author_name: "",
+    content: "",
     user_id: 0,
-    email: ''
+    email: "",
   });
 
   // Fetch the existing post data when the component loads
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`https://backend-i9tl.onrender.com/api/posts/${id}`);
-        if (!response.ok) throw new Error('Failed to fetch post data');
+        const response = await fetch(
+          `https://backend-i9tl.onrender.com/api/posts/${id}`,
+        );
+        if (!response.ok) throw new Error("Failed to fetch post data");
         const data = await response.json();
         setPost(data);
       } catch (error) {
-        console.error('Error fetching post:', error);
+        console.error("Error fetching post:", error);
       }
     };
 
@@ -120,23 +121,26 @@ const Editpost = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://backend-i9tl.onrender.com/api/posts/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        `https://backend-i9tl.onrender.com/api/posts/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(post),
         },
-        body: JSON.stringify(post),
-      });
+      );
 
       if (response.ok) {
-        alert('Post updated successfully');
-        navigate('/'); // Redirect to the home page or any other page after successful update
+        alert("Post updated successfully");
+        navigate("/"); // Redirect to the home page or any other page after successful update
       } else {
-        throw new Error('Failed to update post');
+        throw new Error("Failed to update post");
       }
     } catch (error) {
-      console.error('Error updating post:', error);
-      alert('Failed to update post');
+      console.error("Error updating post:", error);
+      alert("Failed to update post");
     }
   };
 
@@ -145,7 +149,7 @@ const Editpost = () => {
     const { name, value } = e.target;
     setPost((prevPost) => ({
       ...prevPost,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -158,7 +162,7 @@ const Editpost = () => {
           <input
             type="text"
             name="title"
-            value={post.title || ''}
+            value={post.title || ""}
             onChange={handleChange}
             required
           />
@@ -169,7 +173,7 @@ const Editpost = () => {
           <input
             type="text"
             name="author_name"
-            value={post.author_name || ''}
+            value={post.author_name || ""}
             onChange={handleChange}
             required
           />
@@ -179,7 +183,7 @@ const Editpost = () => {
           Content:
           <textarea
             name="content"
-            value={post.content || ''}
+            value={post.content || ""}
             onChange={handleChange}
             required
           />
@@ -190,7 +194,7 @@ const Editpost = () => {
           <input
             type="number"
             name="user_id"
-            value={post.user_id || ''}
+            value={post.user_id || ""}
             onChange={handleChange}
             required
           />
@@ -201,7 +205,7 @@ const Editpost = () => {
           <input
             type="email"
             name="email"
-            value={post.email || ''}
+            value={post.email || ""}
             onChange={handleChange}
             required
           />

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function AllPost() {
   const [posts, setPosts] = useState([]);
 
-const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  const [wishlist, setWishlist] = useState([]); 
-  
+  const [wishlist, setWishlist] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,22 +26,21 @@ const [searchTerm, setSearchTerm] = useState("");
       });
   }, []);
 
-
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchTerm.trim() === '') {
+    if (searchTerm.trim() === "") {
       setFilteredPosts(posts);
     } else {
-      const filtered = posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      const filtered = posts.filter((post) =>
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
       setFilteredPosts(filtered);
     }
   };
 
-
-
- // Retrieve the wishlist from localStorage when the component mounts
+  // Retrieve the wishlist from localStorage when the component mounts
   useEffect(() => {
-    const storedWishlist = localStorage.getItem('wishlist');
+    const storedWishlist = localStorage.getItem("wishlist");
     if (storedWishlist) {
       setWishlist(JSON.parse(storedWishlist)); // Load wishlist from localStorage if available
     }
@@ -50,7 +49,7 @@ const [searchTerm, setSearchTerm] = useState("");
   // Save the wishlist to localStorage whenever it changes
   useEffect(() => {
     if (wishlist.length > 0) {
-      localStorage.setItem('wishlist', JSON.stringify(wishlist)); // Save wishlist to localStorage
+      localStorage.setItem("wishlist", JSON.stringify(wishlist)); // Save wishlist to localStorage
     }
   }, [wishlist]);
 
@@ -67,8 +66,6 @@ const [searchTerm, setSearchTerm] = useState("");
   const isWishlisted = (post) => {
     return wishlist.some((item) => item.id === post.id);
   };
-  
-  
 
   return (
     <>
@@ -93,51 +90,48 @@ const [searchTerm, setSearchTerm] = useState("");
             <ul className="navbar-nav">
               <hr />
               <Link to="/" className="link">
-              <li className="nav-item">
-                <span href="." className="nav-link">
-                  HOME
-                </span>
-              </li>
-            </Link>
-              <Link to='/' className="link">
-              <li className="nav-item">
-                <span className="nav-link">
-                  <span>ABOUT Us</span>
-                </span>
-              </li>
-                </Link>
-              <Link to="/AllPost" className="link">
+                <li className="nav-item">
+                  <span href="." className="nav-link">
+                    HOME
+                  </span>
+                </li>
+              </Link>
+              <Link to="/" className="link">
                 <li className="nav-item">
                   <span className="nav-link">
-                    BLOG
+                    <span>ABOUT Us</span>
                   </span>
+                </li>
+              </Link>
+              <Link to="/AllPost" className="link">
+                <li className="nav-item">
+                  <span className="nav-link">BLOG</span>
                 </li>{" "}
               </Link>
-              <Link to='/' className="link">
-              <li className="nav-item">
-                <span className="nav-link">
-                 <span> SERVICE </span>
-                </span>
-              </li>
-                </Link>
+              <Link to="/" className="link">
+                <li className="nav-item">
+                  <span className="nav-link">
+                    <span> SERVICE </span>
+                  </span>
+                </li>
+              </Link>
               <Link to="/Login" className="link">
-              <li className="nav-item">
-              <span className="nav-link" href="">
-              My Account
-              </span>
-              </li>
+                <li className="nav-item">
+                  <span className="nav-link" href="">
+                    My Account
+                  </span>
+                </li>
               </Link>
 
               <Link to="/Contact" className="link">
-              <button className="btn bg-light text-dark btn- rounded-pill">
-                LET'S TALK
-              </button>
+                <button className="btn bg-light text-dark btn- rounded-pill">
+                  LET'S TALK
+                </button>
               </Link>
             </ul>
           </div>
         </div>
       </nav>
-      
 
       <div className="container-fluid bg-light">
         <div className="row blog">
@@ -189,12 +183,14 @@ const [searchTerm, setSearchTerm] = useState("");
                           <i className="bi  bi-chevron-double-right"></i>{" "}
                         </p>{" "}
                       </Link>
-
-
-
-                      <button className='bg-danger text-white ms-5 me-5 border rounded' onClick={() => toggleWishlist(post)}>
-              {isWishlisted(post) ? 'Remove from Wishlist' : 'Add to Wishlist'}
-            </button>
+                      <button
+                        className="bg-danger text-white ms-5 me-5 border rounded"
+                        onClick={() => toggleWishlist(post)}
+                      >
+                        {isWishlisted(post)
+                          ? "Remove from Wishlist"
+                          : "Add to Wishlist"}
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -202,39 +198,43 @@ const [searchTerm, setSearchTerm] = useState("");
             </div>
 
             {/* Display the wishlist section */}
-            <h2 className='text-danger ms-5 mt-5'>Whishlist</h2>
-      <ul className='grid'>
-        {wishlist.map((post) => (
-          <li key={post.id} className="card bg-white text-dark border rounded shadow-sm p-3"
-                      style={{ listStyle: "none" }}>
-            <img
-                        className="thumbnail"
-                        src="https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg"
-                        alt="img"
-                      />
+            <h2 className="text-danger ms-5 mt-5">Whishlist</h2>
+            <ul className="grid">
+              {wishlist.map((post) => (
+                <li
+                  key={post.id}
+                  className="card bg-white text-dark border rounded shadow-sm p-3"
+                  style={{ listStyle: "none" }}
+                >
+                  <img
+                    className="thumbnail"
+                    src="https://skytechgeek.com/wp-content/uploads/2019/03/become-food-blogger.jpg"
+                    alt="img"
+                  />
 
-            <h3 className="pt-4">{post.title}</h3>
-            <small>
-                        {" "}
-                        <i className="bi bi-person-fill bg-light text-danger p-2 rounded-circle"></i>
-                        By {post.author_name} <br /> {post.created_at}
-                      </small>
-            <p className="pt-3">{post.content.substring(0, 5)}...</p>
-            <br />
-                      <Link to={`/PostDetail/${post.id}`} className="no-line">
-                        <p className="text-danger">
-                          Read more{" "}
-                          <i className="bi  bi-chevron-double-right"></i>{" "}
-                        </p>{" "}
-                      </Link>
-            {/* Button to remove from wishlist */}
-            <button className='bg-danger text-white ms-5 me-5 border rounded' onClick={() => toggleWishlist(post)}>
-              Remove from Wishlist
-            </button>
-          </li>
-        ))}
-      </ul>
-            
+                  <h3 className="pt-4">{post.title}</h3>
+                  <small>
+                    {" "}
+                    <i className="bi bi-person-fill bg-light text-danger p-2 rounded-circle"></i>
+                    By {post.author_name} <br /> {post.created_at}
+                  </small>
+                  <p className="pt-3">{post.content.substring(0, 5)}...</p>
+                  <br />
+                  <Link to={`/PostDetail/${post.id}`} className="no-line">
+                    <p className="text-danger">
+                      Read more <i className="bi  bi-chevron-double-right"></i>{" "}
+                    </p>{" "}
+                  </Link>
+                  {/* Button to remove from wishlist */}
+                  <button
+                    className="bg-danger text-white ms-5 me-5 border rounded"
+                    onClick={() => toggleWishlist(post)}
+                  >
+                    Remove from Wishlist
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="col-sm-4">
@@ -246,20 +246,22 @@ const [searchTerm, setSearchTerm] = useState("");
                 placeholder="Search Post..."
                 className="form-control bg-light mt-5 mb-5 ms-3"
               />
-              <button onClick={handleSearch} className="btn btn-outline-danger mt-5 mb-5 me-3">
+              <button
+                onClick={handleSearch}
+                className="btn btn-outline-danger mt-5 mb-5 me-3"
+              >
                 <i className="bi bi-search"></i>
               </button>
             </form>
 
-
-          <div className="bg-white mt-4 mb-4">
-            <h3 className="pt-5 ms-4">CATEGORIES</h3>
-            <p className="text-danger pt-3 ms-3">Recipes & Cooking Tips</p>
-            <p className="text-danger pt-3 ms-3">Restaurant Reviews</p>
-            <p className="text-danger pt-3 ms-3">Healthy Eating</p>
-            <p className="text-danger pt-3 ms-3 pb-4">Food Trends & News</p>
+            <div className="bg-white mt-4 mb-4">
+              <h3 className="pt-5 ms-4">CATEGORIES</h3>
+              <p className="text-danger pt-3 ms-3">Recipes & Cooking Tips</p>
+              <p className="text-danger pt-3 ms-3">Restaurant Reviews</p>
+              <p className="text-danger pt-3 ms-3">Healthy Eating</p>
+              <p className="text-danger pt-3 ms-3 pb-4">Food Trends & News</p>
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
@@ -308,16 +310,19 @@ const [searchTerm, setSearchTerm] = useState("");
             </div>
           </div>
           <div className="col-sm-8">
-
             <div className="row">
               <div className="col-sm-8 pt-5">
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
-                <p>Experience the joy of culinary exploration, where each recipe, reviews
-                  and tip nourishes the soul just like a melody ot a masterpiece. Let our content inspire
-                  your next meal.
+                <p>
+                  Experience the joy of culinary exploration, where each recipe,
+                  reviews and tip nourishes the soul just like a melody ot a
+                  masterpiece. Let our content inspire your next meal.
                 </p>
                 <h3>Stay Connected</h3>
-                <p>I share delicious and thoughtfully curated content occasionally-no spam, just the good stuff. Promise.</p>
+                <p>
+                  I share delicious and thoughtfully curated content
+                  occasionally-no spam, just the good stuff. Promise.
+                </p>
               </div>
               <div className="col-sm-4 pt-5">
                 <h3>ADDRESS</h3>
@@ -329,7 +334,10 @@ const [searchTerm, setSearchTerm] = useState("");
       </div>
 
       <div className="container-fluid border-top border-light bg-danger text-center text-light p-5">
-      <p>Copyright 2024 Bankky Blogger || Alright Reserve <br/> Subscribe for newsletter</p>
+        <p>
+          Copyright 2024 Bankky Blogger || Alright Reserve <br /> Subscribe for
+          newsletter
+        </p>
       </div>
     </>
   );
