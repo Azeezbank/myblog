@@ -40,7 +40,7 @@ function AllPost() {
 
   // Retrieve the wishlist from localStorage when the component mounts
   useEffect(() => {
-    const storedWishlist = localStorage.getItem("wishlist");
+   const storedWishlist = localStorage.getItem("wishlist");
     if (storedWishlist) {
       setWishlist(JSON.parse(storedWishlist)); // Load wishlist from localStorage if available
     }
@@ -53,12 +53,29 @@ function AllPost() {
     }
   }, [wishlist]);
 
-  // Function to toggle wishlist (add or remove a post from wishlist)
+
+
   const toggleWishlist = (post) => {
-    if (wishlist.includes(post)) {
-      setWishlist(wishlist.filter((item) => item.id !== post.id)); // Remove from wishlist
+    const isItemInWishlist = wishlist.some((item) => item.id === post.id);
+
+    if (isItemInWishlist) {
+      // Remove item from wishlist
+      const updatedWishlist = wishlist.filter((item) => item.id !== post.id);
+
+      if (updatedWishlist.length === 0) {
+        // Clear wishlist if empty
+        setWishlist([]);
+        localStorage.removeItem("wishlist");
+      } else {
+        // Update wishlist in state and localStorage
+        setWishlist(updatedWishlist);
+        localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+      }
     } else {
-      setWishlist([...wishlist, post]); // Add to wishlist
+      // Add item to wishlist
+      const updatedWishlist = [...wishlist, post];
+      setWishlist(updatedWishlist);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
     }
   };
 
@@ -201,8 +218,8 @@ function AllPost() {
             <h2 className="text-danger ms-5 mt-5">Whishlist</h2>
             <ul className="grid">
               {wishlist.map((post, index) => (
-                <li
-                  key={post.id || index}
+                <li key={index}
+                  
                   className="card bg-white text-dark border rounded shadow-sm p-3"
                   style={{ listStyle: "none" }}
                 >
@@ -335,7 +352,7 @@ function AllPost() {
 
       <div className="container-fluid border-top border-light bg-danger text-center text-light p-5">
         <p>
-          Copyright 2024 Bankky Blogger || Alright Reserve <br /> Subscribe for
+          © Copyright 2024 Bankky Blogger || ® Alright Reserve. <br /> Subscribe for
           newsletter
         </p>
       </div>

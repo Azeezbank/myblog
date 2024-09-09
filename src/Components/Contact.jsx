@@ -277,7 +277,7 @@ const Contact = () => {
 
       <div className="container-fluid border-top border-light bg-danger text-center text-light p-5">
         <p>
-          Copyright 2024 Bankky Blogger || Alright Reserve <br /> Subscribe for
+          © Copyright 2024 Bankky Blogger || ® Alright Reserve. <br /> Subscribe for
           newsletter
         </p>
       </div>
