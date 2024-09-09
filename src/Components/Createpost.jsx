@@ -6,6 +6,7 @@ const Createpost = () => {
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [user_id, setUser_id] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,7 +19,7 @@ const Createpost = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ title, author_name, email, content, user_id }),
+          body: JSON.stringify({ title, author_name, email, content, user_id, category }),
         },
       );
 
@@ -29,6 +30,7 @@ const Createpost = () => {
         setEmail("");
         setContent("");
         setUser_id("");
+        setCategory("");
         alert("Post successfull");
       } else {
         // Optionally handle non-OK responses here
@@ -108,6 +110,18 @@ const Createpost = () => {
           className="form-control bg-light mb-3"
           required
         />
+
+        <label htmlFor="category" className="form-label">
+          Category:*
+        </label>
+        <select id="category" className="form-control mb-3"  required>
+        <option>~~~</option>
+          <option>Recipes</option>
+          <option>Restaurant</option>
+          <option>Health</option>
+          <option>Food trends</option>
+        </select>
+        
 
         <div className="form-check">
           <label htmlFor="check" className="form-check-label mb-3">

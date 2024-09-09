@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Createpost from "./Createpost";
 
 const Login = () => {
@@ -32,6 +33,22 @@ const Login = () => {
     setUserId(e.target.value);
     setLoading(true);
   };
+
+
+
+  const handleDelete = async (postId) => {
+    try {
+      await axios.delete(`https://backend-i9tl.onrender.com/api/delete/${postId}`);
+      // Remove the deleted post from the UI
+      setPosts(posts.filter(post => post.id !== postId));
+      setError(null);
+    } catch (error) {
+      setError("Failed to delete post");
+      console.log(error);
+    }
+  };
+
+  
 
   return (
     <>
@@ -177,7 +194,7 @@ const Login = () => {
           <div className="col-sm-1"></div>
         </div>
 
-        <div className="row bg-light p-5">
+        <div className="row bg-light p-3">
           {error && <p style={{ color: "red" }}>{error}</p>}
 
           <div>
@@ -217,7 +234,16 @@ const Login = () => {
                       >
                         Edit
                       </Link>{" "}
-                      {/* Link to EditPost */}
+
+
+                      <button
+                        className="btn btn-danger ms-2"
+                        onClick={() => handleDelete(post.id)}
+                      >
+                        Delete
+                      </button>
+
+                      
                     </div>
                   ))
                 ) : (

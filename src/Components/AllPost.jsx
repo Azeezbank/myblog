@@ -158,9 +158,9 @@ function AllPost() {
                 </>
               ) : (
                 <ul className="p-3 grid">
-                  {filteredPosts.map((post) => (
+                  {filteredPosts.map((post, index) => (
                     <li
-                      key={post.id}
+                      key={post.id || index}
                       className="card bg-white text-dark border rounded shadow-sm p-3"
                       style={{ listStyle: "none" }}
                     >
@@ -200,9 +200,9 @@ function AllPost() {
             {/* Display the wishlist section */}
             <h2 className="text-danger ms-5 mt-5">Whishlist</h2>
             <ul className="grid">
-              {wishlist.map((post) => (
+              {wishlist.map((post, index) => (
                 <li
-                  key={post.id}
+                  key={post.id || index}
                   className="card bg-white text-dark border rounded shadow-sm p-3"
                   style={{ listStyle: "none" }}
                 >
