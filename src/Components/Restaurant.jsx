@@ -13,7 +13,7 @@ function AllPost() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://backend-i9tl.onrender.com/api/posts")
+    fetch("https://backend-i9tl.onrender.com/api/restaurant")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
@@ -175,9 +175,9 @@ function AllPost() {
                 </>
               ) : (
                 <ul className="p-3 grid">
-                  {filteredPosts.map((post, index) => (
+                  {filteredPosts.map((post) => (
                     <li
-                      key={post.id || index}
+                      key={post.id}
                       className="card bg-white text-dark border rounded shadow-sm p-3"
                       style={{ listStyle: "none" }}
                     >
@@ -192,7 +192,7 @@ function AllPost() {
                         <i className="bi bi-person-fill bg-light text-danger p-2 rounded-circle"></i>
                         By {post.author_name} <br /> {post.created_at}
                       </small>{" "}
-                      <p className="pt-3">{post.content.substring(0, 300)}...</p>
+                      <p className="pt-3">{post.content.substring(0, 5)}...</p>
                       <br />
                       <Link to={`/PostDetail/${post.id}`} className="no-line">
                         <p className="text-danger">
@@ -219,7 +219,7 @@ function AllPost() {
             <ul className="grid">
               {wishlist.map((post, index) => (
                 <li key={index}
-                  
+
                   className="card bg-white text-dark border rounded shadow-sm p-3"
                   style={{ listStyle: "none" }}
                 >
@@ -235,7 +235,7 @@ function AllPost() {
                     <i className="bi bi-person-fill bg-light text-danger p-2 rounded-circle"></i>
                     By {post.author_name} <br /> {post.created_at}
                   </small>
-                  <p className="pt-3">{post.content.substring(0, 300)}...</p>
+                  <p className="pt-3">{post.content.substring(0, 5)}...</p>
                   <br />
                   <Link to={`/PostDetail/${post.id}`} className="no-line">
                     <p className="text-danger">

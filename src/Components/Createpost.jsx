@@ -81,14 +81,15 @@ const Createpost = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Author mail"
           className="form-control mb-3 bg-light"
-          name="email"
+          id={"email"}
           required
         />
 
         <label htmlFor="content" className="form-label">
           Content:*
         </label>
-        <input
+        <textarea id={"content"} onChange={(e) => setContent(e.target.value)} className="form-control bg-light mb-3" rows={5} placeholder="Post content here" required></textarea>
+        {/* <input
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}
@@ -96,7 +97,7 @@ const Createpost = () => {
           className="form-control bg-light mb-3"
           name="content"
           required
-        />
+        /> */}
 
         <label htmlFor="userid" className="form-label">
           User_id:*
@@ -114,12 +115,12 @@ const Createpost = () => {
         <label htmlFor="category" className="form-label">
           Category:*
         </label>
-        <select id="category" className="form-control mb-3"  required>
+        <select id="category" className="form-control mb-3 bg-light"  required>
         <option>~~~</option>
-          <option>Recipes</option>
-          <option>Restaurant</option>
-          <option>Health</option>
-          <option>Food trends</option>
+          <option>Recipes & Cooking Tips</option>
+          <option>Restaurant Reviews</option>
+          <option>Healthy Eating</option>
+          <option>Food Trends & News</option>
         </select>
         
 

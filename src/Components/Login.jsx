@@ -221,19 +221,19 @@ const Login = () => {
                         <i className="bi bi-person-fill bg-light text-danger p-2 rounded-circle"></i>
                         By {post.author_name} <br /> {post.created_at}
                       </small>{" "}
-                      <p className="pt-3">{post.content.substring(0, 5)}...</p>
+                      <p className="pt-3">{post.content.substring(0, 300)}...</p>
                       <Link to={`/PostDetail/${post.id}`} className="no-line">
                         <p className="text-danger">
                           Read more{" "}
                           <i className="bi  bi-chevron-double-right"></i>{" "}
                         </p>{" "}
                       </Link>
-                      <Link
+                      {/* <Link
                         to={`/Editpost/${post.id}`}
                         className="no-line text-white bg-danger p-1 rounded ms-2"
                       >
                         Edit
-                      </Link>{" "}
+                      </Link>{" "} */}
 
 
                       <button

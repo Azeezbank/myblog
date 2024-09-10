@@ -56,9 +56,11 @@ const Contact = () => {
                 </li>
               </Link>
 
+              <Link to={"/Contact"}>
               <button className="btn bg-light text-dark btn- rounded-pill">
                 LET'S TALK
               </button>
+              </Link>
             </ul>
           </div>
         </div>
