@@ -45,6 +45,10 @@
   padding-left: 10%; padding-right: 10%; padding-bottom: 80px
 }
 
+@media (max-width: 760px) {
+  myPost {display: grid; grid-auto-column: auto;}
+}
+
 
 @media (min-width: 1200px) {
 .car, .paragraph {margin-left: 10%; margin-right: 10%;}

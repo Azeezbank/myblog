@@ -8,11 +8,13 @@ import Editpost from "./Components/Editpost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from "./Components/Contact";
 import Restaurant from "./Components/Restaurant";
+import Scrow from "./Components/Scrow";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Scrow />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/AllPost" element={<AllPost />} />

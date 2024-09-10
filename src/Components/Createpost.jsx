@@ -88,7 +88,8 @@ const Createpost = () => {
         <label htmlFor="content" className="form-label">
           Content:*
         </label>
-        <textarea id={"content"} onChange={(e) => setContent(e.target.value)} className="form-control bg-light mb-3" rows={5} placeholder="Post content here" required></textarea>
+        <textarea id={"content"} onChange={(e) => setContent(e.target.value)} className="form-control bg-light mb-3" rows={5} placeholder="Post content here"
+          style={{whiteSpace:"pre"}}required></textarea>
         {/* <input
           type="text"
           value={content}

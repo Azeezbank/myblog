@@ -200,7 +200,7 @@ const Login = () => {
           <div>
             {loading ? (
               <h1 className="text-danger">
-                <div className="spinner-grow"></div> Loading...
+                <div className="spinner-grow"></div> Please wait...
               </h1>
             ) : (
               <div className="myPost">
@@ -221,7 +221,7 @@ const Login = () => {
                         <i className="bi bi-person-fill bg-light text-danger p-2 rounded-circle"></i>
                         By {post.author_name} <br /> {post.created_at}
                       </small>{" "}
-                      <p className="pt-3">{post.content.substring(0, 300)}...</p>
+                      <p className="pt-3" style={{whiteSpace:"pre-wrap"}}>{post.content.substring(0, 300)}...</p>
                       <Link to={`/PostDetail/${post.id}`} className="no-line">
                         <p className="text-danger">
                           Read more{" "}

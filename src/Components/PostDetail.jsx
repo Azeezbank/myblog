@@ -134,7 +134,7 @@ function PostDetail() {
             <i className="bi bi-person-fill bg-white text-danger p-2 rounded-circle"></i>
             By {post.author_name} <br /> {post.created_at}
           </p>
-          <p className="pt-3">{post.content}</p>
+          <p className="pt-3" style={{whiteSpace:"pre-wrap"}}>{post.content}</p>
         </div>
 
         {/* Displaying the submitted data */}
@@ -143,7 +143,7 @@ function PostDetail() {
           {submittedData.map((entry, index) => (
             <li
               className="border p-3 m-3 bg-white"
-              style={{ listStyle: "none" }}
+              style={{ listStyle: "none", whiteSpace:"pre" }}
               key={index}
             >
               <strong>Name: {entry.name}:</strong>{" "}
@@ -169,7 +169,7 @@ function PostDetail() {
               className="form-control mt-4 bg-light"
               rows={5}
               value={comment}
-              onChange={(e) => setComment(e.target.value)}
+              onChange={(e) => setComment(e.target.value)} style={{whiteSpace: 'pre'}}
               placeholder="Type here..."
             ></textarea>
 
