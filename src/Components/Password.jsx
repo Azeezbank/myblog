@@ -141,8 +141,8 @@ function Password() {
             placeholder='Input Username'
             required
           />
-          <div className='valid-feedback'>Valid</div>
-          <div className='invalid-feedback mb-4'>Username cannot be empty.</div>
+          <div className='valid-feedback mb-3'>Valid</div>
+          <div className='invalid-feedback mb-3'>Username cannot be empty.</div>
         </div>
         <div>
           <label className='form-label'>Password:*</label>
@@ -153,8 +153,8 @@ function Password() {
             className='form-control' placeholder='Input Password'
             required
           />
-          <div className='valid-feedback'>Valid</div>
-          <div className='invalid-feedback mb-4'>Password cannot be empty.</div>
+          <div className='valid-feedback mb-3'>Valid</div>
+          <div className='invalid-feedback mb-3'>Password cannot be empty.</div>
         </div>
         <button className='btn btn-danger' type="submit">Login</button>
         <p className={"text-danger text-center mt-4 mb-2"}>New to Bankky blog? <Link to={"/Register"}>Create Account</Link></p>
