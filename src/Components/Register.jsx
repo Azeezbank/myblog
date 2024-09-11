@@ -8,6 +8,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [mismatch, setMismatch] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,6 +17,8 @@ const Register = () => {
       return;
     }
 
+    setLoading(true);
+    
     try {
       const response = await fetch("https://backend-i9tl.onrender.com/api/register", {
         method: "POST",
@@ -31,6 +34,7 @@ const Register = () => {
         setGmail("");
         setPassword("");
         setSuccess(true);
+        setLoading(false);
       } else {
         // Optionally handle non-OK responses here
         console.error("Failed to add user.");
@@ -38,14 +42,93 @@ const Register = () => {
     } catch (error) {
       // Optionally handle network or other errors here
       console.error("Failed to add user.", error);
-    }
+    } finally {
+      setLoading(false);
+    };
   };
 
   return (
     <>
+
+<nav className="navbar navbar-expand-md bg-danger bg-gradient fixed-top">
+            <div className="container-fluid">
+              <span
+                href="#"
+                className="navbar-brand"
+                style={{ fontSize: "2.2rem", fontWeight: "bold" }}
+              >
+                Bankky <small>Blog.</small>
+              </span>
+              <button
+                className="navbar-toggler bg-light bg-gradient"
+                type=" button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navContent"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navContent">
+                <ul className="navbar-nav">
+                  <hr />
+                  <Link to="/" className="link">
+                  <li className="nav-item">
+                    <span className="nav-link">
+                      HOME
+                    </span>
+                  </li>
+                </Link>
+                  <Link to='/' className='link'>
+                  <li className="nav-item">
+                    <span className="nav-link">
+                      <span>ABOUT Us</span>
+                    </span>
+                  </li>
+                    </Link>
+                  <Link to="/AllPost" className="link">
+                    <li className="nav-item">
+                      <span className="nav-link">
+                        BLOG
+                      </span>
+                    </li>{" "}
+                  </Link>
+                  <Link to='/' className='link'>
+                  <li className="nav-item">
+                    <span className="nav-link">
+                     <span> SERVICE </span>
+                    </span>
+                  </li>
+                    </Link>
+                  
+                    
+                    <li className="nav-item">
+                    <div className="dropdown">
+                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
+                  My Account
+                  </span>
+                      <ul className="dropdown-menu">
+                      <Link to="/Password" className={"link"}>
+                        <li className={"border-bottom"}><span className="dropdown-item">Login</span></li>
+                      </Link>
+                       <Link to={"/Register"} className={"link"}> <li><span className={"dropdown-item"}>Register</span></li>
+                       </Link>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <Link to="/Contact">
+                  <button className="btn bg-light text-dark btn- rounded-pill">
+                    LET'S TALK
+                  </button>
+                  </Link>
+                </ul>
+              </div>
+            </div>
+          </nav>
+      
     <div className="container-fluid bg-light pb-5">
       <div className="container">
-      <form onSubmit={handleSubmit} className="bg-white p-4 was-validated">
+      <form onSubmit={handleSubmit} className="bg-white p-4 mt-5 was-validated">
+        <h2 className="text-danger text-center pt-5 pb-3">Create an account</h2>
         <div>
         <label htmlFor="username" className="form-label">Username:*</label>
         <input
@@ -99,6 +182,7 @@ const Register = () => {
         <button type="submit" className="btn btn-danger mt-4 mb-3">Register</button>
       </form>
         {success && <p className="text-danger text-center pt-5">Registration successful, please <Link to={"/Password"}>login</Link></p>}
+        {loading && <h3 className="text-danger text-center pt-5"> <div className="spinner-grow"></div>Processing..</h3>}
       </div>
       </div>
 

@@ -159,15 +159,15 @@ function Password() {
         <button className='btn btn-danger' type="submit">Login</button>
         <p className={"text-danger text-center mt-4 mb-2"}>New to Bankky blog? <Link to={"/Register"}>Create Account</Link></p>
       </form> </div> ) : (
-      <div className='p-4 container'>
-       <p>Welcome back, <strong>{message}!</strong> If this isn't you, please <Link to={"/"}><strong>log out</strong></Link> and log in again with the correct username.</p>
+      <div className='p-4 pt-5 container'>
+       <p className="mt-5">Welcome back, <strong>{message}!</strong> If this isn't you, please <Link to={"/"}><strong>log out</strong></Link> and log in again with the correct username.</p>
         <Link to={"/Login"}>
         <button className='btn btn-danger p-3 m-5'>Proceed</button>
         </Link>
       </div>
       )}
 
-        {loading && ( <h2 className="text-danger text-center">Please wait...</h2> )}
+        {loading && ( <h2 className="text-danger text-center pb-5"><div className="spinner-grow"></div>Please wait...</h2> )}
       <div>
       {message && !isLogin && <p className='text-danger m-5 p-5 text-center'>{message}</p> }
       </div>

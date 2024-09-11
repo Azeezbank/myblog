@@ -52,13 +52,21 @@ const Home = () => {
                   </a>
                 </span>
               </li>
-              <Link to="/Password" className="link">
-                <li className="nav-item">
-                  <span className="nav-link" href="">
-                    My Account
+
+              <li className="nav-item">
+                    <div className="dropdown">
+                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
+                  My Account
                   </span>
-                </li>
-              </Link>
+                      <ul className="dropdown-menu">
+                      <Link to="/Password" className={"link"}>
+                        <li className={"border-bottom"}><span className="dropdown-item">Login</span></li>
+                      </Link>
+                       <Link to={"/Register"} className={"link"}> <li><span className={"dropdown-item"}>Register</span></li>
+                       </Link>
+                      </ul>
+                    </div>
+                  </li>
 
               <Link to="/Contact" className="link">
                 <button className="btn bg-light text-dark btn- rounded-pill">
