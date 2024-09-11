@@ -52,7 +52,7 @@ const Home = () => {
                   </a>
                 </span>
               </li>
-              <Link to="/Login" className="link">
+              <Link to="/Password" className="link">
                 <li className="nav-item">
                   <span className="nav-link" href="">
                     My Account

@@ -138,7 +138,7 @@ const Login = () => {
               className="img-circle userimg"
             />{" "}
             <br />
-            <strong className="mt-2">Bankky@yahoo.com</strong> <hr />
+            <strong className="mt-2">Bankky@yahoo.com{username}</strong> <hr />
             <h5 className="bg-light text-dark p-2 rounded">
               <i className="bi bi-person"></i> Dashboard
             </h5>
