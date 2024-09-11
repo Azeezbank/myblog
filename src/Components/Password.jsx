@@ -97,13 +97,22 @@ function Password() {
                     </span>
                   </li>
                     </Link>
-                  <Link to="/Password" className="link">
-                  <li className="nav-item">
-                  <span className="nav-link" href="">
+                  
+                    
+                    <li className="nav-item">
+                    <div className="dropdown">
+                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
                   My Account
                   </span>
+                      <ul className="dropdown-menu">
+                      <Link to="/Password" className={"link"}>
+                        <li className={"border-bottom"}><span className="dropdown-item">Login</span></li>
+                      </Link>
+                       <Link to={"/Register"} className={"link"}> <li><span className={"dropdown-item"}>Register</span></li>
+                       </Link>
+                      </ul>
+                    </div>
                   </li>
-                  </Link>
 
                   <Link to="/Contact">
                   <button className="btn bg-light text-dark btn- rounded-pill">
@@ -119,9 +128,9 @@ function Password() {
     
       <div className='bg-light container-fluid mt-5'>
       {!isLogin ? (
-      <div className='container bg-light'>
+      <div className='container bg-light pb-5'>
       <form className='bg-white p-5 was-validated' onSubmit={handleLogin}>
-        <h2 className='text-danger mb-5 mt-5'>Login</h2>
+        <h2 className='text-danger mb-5 mt-5 text-center'>Login to your account</h2>
         <div>
           <label className='form-label'>Username:*</label>
           <input
@@ -148,6 +157,7 @@ function Password() {
           <div className='invalid-feedback mb-4'>Password cannot be empty.</div>
         </div>
         <button className='btn btn-danger' type="submit">Login</button>
+        <p className={"text-danger text-center mt-4 mb-2"}>New to Bankky blog? <Link to={"/Register"}>Create Account</Link></p>
       </form> </div> ) : (
       <div className='p-4 container'>
        <p>Welcome back, <strong>{message}!</strong> If this isn't you, please <Link to={"/"}><strong>log out</strong></Link> and log in again with the correct username.</p>

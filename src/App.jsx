@@ -10,6 +10,8 @@ import Contact from "./Components/Contact";
 import Restaurant from "./Components/Restaurant";
 import Scrow from "./Components/Scrow";
 import Password from './Components/Password';
+import Register from './Components/Register';
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Restaurant" element={<Restaurant />} />
           <Route path="/Password" element={<Password/>} />
+          <Route path="/Register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>
