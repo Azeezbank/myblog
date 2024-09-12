@@ -157,7 +157,7 @@ function Password() {
           <div className='invalid-feedback mb-3'>Password cannot be empty.</div>
         </div>
         <button className='btn btn-danger' type="submit">Login</button>
-        <p className={"text-danger text-center mt-4 mb-2"}>New to Bankky blog? <Link to={"/Register"}>Create Account</Link></p>
+        <p className={"text-center mt-4 mb-2"}>New to Bankky blog? <Link to={"/Register"}>Create Account</Link></p>
       </form> </div> ) : (
       <div className='p-4 pt-5 container'>
        <p className="mt-5">Welcome back, <strong>{message}!</strong> If this isn't you, please <Link to={"/"}><strong>log out</strong></Link> and log in again with the correct username.</p>
@@ -225,7 +225,7 @@ function Password() {
               <div className="col-sm-8 pt-5">
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
                 <p>Experience the joy of culinary exploration, where each recipe, reviews
-                  and tip nourishes the soul just like a melody ot a masterpiece. Let our content inspire
+                  and tip nourishes the soul just like a melody at a masterpiece. Let our content inspire
                   your next meal.
                 </p>
                 <h3>Stay Connected</h3>
