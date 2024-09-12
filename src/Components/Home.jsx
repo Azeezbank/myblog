@@ -10,9 +10,9 @@ const Home = () => {
           <span
             href="#"
             className="navbar-brand"
-            style={{ fontSize: "2.2rem", fontWeight: "bold" }}
+            style={{ fontSize: "1.6rem", fontWeight: "bold" }}
           >
-            Bankky <small>Blog.</small>
+           <i class="bi bi-cup-hot"></i> Bankky <small>Blog.</small>
           </span>
           <button
             className="navbar-toggler bg-light bg-gradient"
