@@ -200,6 +200,7 @@ const Contact = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     alert("Message submitted successfully, thanks");
+                    return;
                   }}
                 >
                   Submit
