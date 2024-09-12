@@ -199,6 +199,7 @@ const Contact = () => {
                   className="btn mt-3 bg-danger text-white"
                   onClick={(e) => {
                     e.preventDefault();
+                    alert("Message submitted successfully, thanks");
                   }}
                 >
                   Submit
