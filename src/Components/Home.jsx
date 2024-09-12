@@ -273,7 +273,7 @@ const Home = () => {
               <h4>Nutrition Analysis</h4>
               <p className="text-muted">
                 Understanding and explaining the nutritional content of various
-                foods and how they contribute to a balanced diet
+                foods and how they contribute to a balance diet
               </p>
             </div>
             <div className="col-1">
@@ -417,7 +417,7 @@ const Home = () => {
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
                 <p>
                   Experience the joy of culinary exploration, where each recipe,
-                  reviews and tip nourishes the soul just like a melody ot a
+                  reviews and tip nourishes the soul just like a melody at a
                   masterpiece. Let our content inspire your next meal.
                 </p>
                 <h3>Stay Connected</h3>
