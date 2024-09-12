@@ -180,6 +180,7 @@ const Register = () => {
         {mismatch && <p className="text-danger mb-3">Password do not match</p>}
 
         <button type="submit" className="btn btn-danger mt-4 mb-3">Register</button>
+        <p className="text-center mt-4">Already a member? <Link to="/Password"> Sign in</Link></p>
       </form>
         {success && <p className="text-danger text-center pt-5">Registration successful, please <Link to={"/Password"}>login</Link></p>}
         {loading && <h3 className="text-danger text-center pt-5"> <div className="spinner-grow"></div>Processing..</h3>}
@@ -236,7 +237,7 @@ const Register = () => {
               <div className="col-sm-8 pt-5">
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
                 <p>Experience the joy of culinary exploration, where each recipe, reviews
-                  and tip nourishes the soul just like a melody ot a masterpiece. Let our content inspire
+                  and tip nourishes the soul just like a melody at a masterpiece. Let our content inspire
                   your next meal.
                 </p>
                 <h3>Stay Connected</h3>
