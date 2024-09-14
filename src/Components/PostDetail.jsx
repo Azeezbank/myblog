@@ -63,9 +63,9 @@ function PostDetail() {
           <span
             href="#"
             className="navbar-brand"
-            style={{ fontSize: "2.2rem", fontWeight: "bold" }}
+            style={{ fontSize: "1.6rem", fontWeight: "bold" }}
           >
-            Bankky <small>Blog.</small>
+        <i class="bi bi-cup-hot"></i>    Bankky <small>Blog.</small>
           </span>
           <button
             className="navbar-toggler bg-light bg-gradient"
@@ -104,13 +104,20 @@ function PostDetail() {
                   </span>
                 </li>
               </Link>
-              <Link to="/Login" className="link">
-                <li className="nav-item">
-                  <span className="nav-link" href="">
-                    My Account
+
+              <li className="nav-item">
+                    <div className="dropdown">
+                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
+                  My Account
                   </span>
-                </li>
-              </Link>
+                      <ul className="dropdown-menu">
+                      <Link to="/Password" className={"link"}>
+                        <li><span className="dropdown-item"><i className="bi bi-power"></i> Logout</span></li>
+                      </Link>
+                     
+                      </ul>
+                    </div>
+                  </li>
 
               <Link to={'/Contact'}>
               <button className="btn bg-light text-dark btn- rounded-pill">

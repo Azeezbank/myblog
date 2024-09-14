@@ -89,7 +89,7 @@ const Createpost = () => {
           Content:*
         </label>
         <textarea id={"content"} onChange={(e) => setContent(e.target.value)} className="form-control bg-light mb-3" rows={5} placeholder="Post content here"
-          style={{whiteSpace:"pre"}}required></textarea>
+          style={{whiteSpace:"pre-wrap"}}required></textarea>
         {/* <input
           type="text"
           value={content}

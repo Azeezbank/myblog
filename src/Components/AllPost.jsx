@@ -91,9 +91,9 @@ function AllPost() {
           <span
             href="#"
             className="navbar-brand"
-            style={{ fontSize: "2.2rem", fontWeight: "bold" }}
+            style={{ fontSize: "1.6rem", fontWeight: "bold" }}
           >
-            Bankky <small>Blog.</small>
+           <i class="bi bi-cup-hot"></i> Bankky <small>Blog.</small>
           </span>
           <button
             className="navbar-toggler bg-light bg-gradient"
@@ -132,13 +132,21 @@ function AllPost() {
                   </span>
                 </li>
               </Link>
-              <Link to="/Login" className="link">
-                <li className="nav-item">
-                  <span className="nav-link" href="">
-                    My Account
+
+              <li className="nav-item">
+                    <div className="dropdown">
+                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
+                  My Account
                   </span>
-                </li>
-              </Link>
+                      <ul className="dropdown-menu">
+                      <Link to="/Password" className={"link"}>
+                        <li className={"border-bottom"}><span className="dropdown-item"><i className="bi bi-key"></i> Login</span></li>
+                      </Link>
+                       <Link to={"/Register"} className={"link"}> <li><span className={"dropdown-item"}><i className="bi bi-person-add"></i> Register</span></li>
+                       </Link>
+                      </ul>
+                    </div>
+                  </li>
 
               <Link to="/Contact" className="link">
                 <button className="btn bg-light text-dark btn- rounded-pill">
@@ -334,7 +342,7 @@ function AllPost() {
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
                 <p>
                   Experience the joy of culinary exploration, where each recipe,
-                  reviews and tip nourishes the soul just like a melody ot a
+                  reviews and tip nourishes the soul just like a melody at a
                   masterpiece. Let our content inspire your next meal.
                 </p>
                 <h3>Stay Connected</h3>

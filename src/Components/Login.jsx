@@ -57,9 +57,9 @@ const Login = () => {
           <span
             href="#"
             className="navbar-brand"
-            style={{ fontSize: "2.2rem", fontWeight: "bold" }}
+            style={{ fontSize: "1.6rem", fontWeight: "bold" }}
           >
-            Bankky <small>Blog.</small>
+         <i class="bi bi-cup-hot"></i>   Bankky <small>Blog.</small>
           </span>
           <button
             className="navbar-toggler bg-light bg-gradient"
@@ -96,13 +96,20 @@ const Login = () => {
                   </span>
                 </li>
               </Link>
-              <Link to="/Login" className="link">
-                <li className="nav-item">
-                  <span className="nav-link" href="">
-                    My Account
+
+              <li className="nav-item">
+                    <div className="dropdown">
+                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
+                  My Account
                   </span>
-                </li>
-              </Link>
+                      <ul className="dropdown-menu">
+                      <Link to="/Password" className={"link"}>
+                        <li><span className="dropdown-item"><i className="bi bi-power"></i> Logout</span></li>
+                      </Link>
+                       
+                      </ul>
+                    </div>
+                  </li>
 
               <Link to="/Contact" className="link">
                 <button className="btn bg-light text-dark rounded-pill ">
@@ -228,12 +235,12 @@ const Login = () => {
                           <i className="bi  bi-chevron-double-right"></i>{" "}
                         </p>{" "}
                       </Link>
-                      {/* <Link
+                       <Link
                         to={`/Editpost/${post.id}`}
-                        className="no-line text-white bg-danger p-1 rounded ms-2"
                       >
-                        Edit
-                      </Link>{" "} */}
+                      <button 
+                        className="btn btn-danger ms-1">Edit</button>
+                      </Link>{" "}
 
 
                       <button
@@ -307,7 +314,7 @@ const Login = () => {
                 <h3>Join Our Community of 203,849 Food Lovers</h3>
                 <p>
                   Experience the joy of culinary exploration, where each recipe,
-                  reviews and tip nourishes the soul just like a melody ot a
+                  reviews and tip nourishes the soul just like a melody at a
                   masterpiece. Let our content inspire your next meal.
                 </p>
                 <h3>Stay Connected</h3>
