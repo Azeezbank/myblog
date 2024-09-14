@@ -97,7 +97,7 @@ useEffect(() => {
         </div>
       </nav>
 
-      <div className="container-fluid bg-light">
+      <div className="container-fluid bg-light pt-5">
       <h2>Edit Post</h2>
         <div className="container bg-white">
         <form className="bg-white p-4">
