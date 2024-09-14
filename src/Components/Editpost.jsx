@@ -58,12 +58,13 @@ useEffect(() => {
         onChange={(e) => setPosts({ ...posts, user_id: e.target.value})}
         placeholder="Author Email"
       />
-      <input
-        type="text"
+      <select
         value={posts.category}
         onChange={(e) => setPosts({...posts, category: e.target.value})}
-        placeholder="Post Category"
-      />
+        placeholder="Post Category">
+        <option>~~~</option>
+        <option></option>
+      </select>
       <button>Update Post</button>
     </div>
   );
