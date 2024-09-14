@@ -19,7 +19,6 @@ useEffect(() => {
     try {
       const response = await axios.get(`https://backend-i9tl.onrender.com/api/posts/${id}`);
      setPosts(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error('Error fetching post:', error);
     }
@@ -100,40 +99,48 @@ useEffect(() => {
 
       <div className="container-fluid bg-light">
       <h2>Edit Post</h2>
+        <div className="container bg-white">
+        <form className="bg-white p-4">
       <input
         type="text"
         value={posts.title}
         onChange={(e) => setPosts({ ...posts, title: e.target.value})}
         placeholder="Post Title"
+        required
       />
       <input
         type="text"
         value={posts.author_name}
         onChange={(e) => setPost({ ...posts, author_name: e.target.value})}
         placeholder="Post Author"
+        required 
       />
       <textarea
         value={posts.content}
         onChange={(e) => setPosts({ ...posts, content: e.target.value})}
         placeholder="Post Content"
-      />
+        required
+      ></textarea>
       <input
         type="text"
         value={posts.user_id}
         onChange={(e) => setPosts({ ...posts, user_id: e.target.value})}
         placeholder="User ID"
+        required
       />
       <input
         type="email"
         value={posts.email}
         onChange={(e) => setPosts({ ...posts, user_id: e.target.value})}
         placeholder="Author Email"
+        required
       />
     
      <label htmlFor="category" className="form-label">
           Category:*
         </label>
-        <select id="category" className="form-control mb-3 bg-light" value={posts.category} onChange={(e) => setPosts({...posts, category: e.target.value})}  required>
+        <select id="category" className="form-control mb-3 bg-light" 
+          value={posts.category} onChange={(e) => setPosts({...posts, category: e.target.value})}  required>
         <option>~~~</option>
           <option>Recipes & Cooking Tips</option>
           <option>Restaurant Reviews</option>
@@ -141,7 +148,9 @@ useEffect(() => {
           <option>Food Trends & News</option>
         </select>
         
-      <button>Update Post</button>      
+      <button>Update Post</button>
+          </form>
+          </div>
     </div>
 
       <div className="container-fluid bg-danger p-5 pt-3 text-center text-white">
