@@ -287,8 +287,4 @@ useEffect(() => {
   );
 };
 
-<<<<<<< HEAD
 export default Editpost;
-=======
-export default Editpost;
->>>>>>> af77116278ffa26d4a3e71109534e667261bcc0f
