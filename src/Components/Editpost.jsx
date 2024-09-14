@@ -80,7 +80,7 @@ useEffect(() => {
                   </span>
                       <ul className="dropdown-menu">
                       <Link to="/Password" className={"link"}>
-                        <li className={"border-bottom"}><span className="dropdown-item">Logout</span></li>
+                        <li><span className="dropdown-item">Logout</span></li>
                       </Link>
                        
                       </ul>
@@ -98,44 +98,85 @@ useEffect(() => {
       </nav>
 
       <div className="container-fluid bg-light pt-5">
-        <div className="container bg-white pt-3">
-          <h2>Edit your post</h2>
-        <form className="bg-white p-4">
+        <div className="container bg-white pt-5">
+          <h2 className="text-center text-danger pt-3 mb-3>Edit your post</h2>
+            
+        <form className="bg-white p-4 was-validated">
+          <div>
+            <label htmlFor={"title"} className="form-label"> Post tittl:*</label>
       <input
         type="text"
+        id={"title"}
         value={posts.title}
         onChange={(e) => setPosts({ ...posts, title: e.target.value})}
         placeholder="Post Title"
+        className="form-control"
         required
       />
+            <div className="valid-feedback mb-3">Valid.</div>
+            <div className="invalid-feedback mb-3">Field cannot be empty.</div>
+            </div>
+
+          <div>
+            <label htmlFor={"author"} className="form-label"> Post author name:*</label>
       <input
         type="text"
         value={posts.author_name}
+        id={"author"}
         onChange={(e) => setPost({ ...posts, author_name: e.target.value})}
         placeholder="Post Author"
+        className="form-control"
         required 
       />
+            <div className="valid-feedback mb-3">Valid.</div>
+            <div className="invalid-feedback mb-3">Field cannot be empty.</div>
+            </div>
+
+          <div>
+            <label htmlFor={"content"} className="form-label"> Post contest:*</label>
       <textarea
         value={posts.content}
         onChange={(e) => setPosts({ ...posts, content: e.target.value})}
         placeholder="Post Content"
+        className="form-control"
+        id={"content"}
         required
       ></textarea>
+            <div className="valid-feedback mb-3">Valid.</div>
+            <div className="invalid-feedback mb-3">Field cannot be empty.</div>
+            </div>
+
+          <div>
+            <label htmlFor={"userid"} className="form-label"> User_id:*</label>
       <input
-        type="text"
+        type="password"
+        id={"userid"}
         value={posts.user_id}
         onChange={(e) => setPosts({ ...posts, user_id: e.target.value})}
         placeholder="User ID"
+        className="form-control"
         required
       />
+            <div className="valid-feedback mb-3">Valid.</div>
+            <div className="invalid-feedback mb-3">Field cannot be empty.</div>
+            </div>
+
+          <div>
+            <label htmlFor={"email"} className="form-label"> Author email:*</label>
       <input
         type="email"
+        id={"email"}
         value={posts.email}
         onChange={(e) => setPosts({ ...posts, user_id: e.target.value})}
         placeholder="Author Email"
+        className="form-control"
         required
       />
-    
+            <div className="valid-feedback mb-3">Valid.</div>
+            <div className="invalid-feedback mb-3">Field cannot be empty.</div>
+            </div>
+
+          <div>
      <label htmlFor="category" className="form-label">
           Category:*
         </label>
@@ -147,8 +188,11 @@ useEffect(() => {
           <option>Healthy Eating</option>
           <option>Food Trends & News</option>
         </select>
+            <div className="valid-feedback mb-3">Valid.</div>
+            <div className="invalid-feedback mb-3">Field cannot be empty.</div>
+            </div>
         
-      <button>Update Post</button>
+      <button className="btn btn-danger mb-3 mt-2 rounded p-2">Update Post</button>
           </form>
           </div>
     </div>
