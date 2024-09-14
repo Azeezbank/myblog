@@ -192,7 +192,7 @@ useEffect(() => {
             <div className="invalid-feedback mb-3">Field cannot be empty.</div>
             </div>
         
-      <button className="btn btn-danger mb-3 mt-2 rounded p-2">Update Post</button>
+      <button className="btn btn-danger mb-3 mt-2 rounded p-2" onClick={(e) => {e.preventDefault()}}>Update Post</button>
           </form>
           </div>
     </div>
