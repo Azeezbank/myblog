@@ -28,74 +28,7 @@ useEffect(() => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-md bg-danger bg-gradient fixed-top">
-        <div className="container-fluid">
-          <span
-            href="#"
-            className="navbar-brand"
-            style={{ fontSize: "1.6rem", fontWeight: "bold" }}
-          >
-         <i class="bi bi-cup-hot"></i>   Bankky <small>Blog.</small>
-          </span>
-          <button
-            className="navbar-toggler bg-light bg-gradient"
-            type=" button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navContent"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navContent">
-            <ul className="navbar-nav">
-              <hr />
-              <Link to="/" className="link">
-                <li className="nav-item">
-                  <span className="nav-link">HOME</span>
-                </li>
-              </Link>
-              <Link to="/" className="link">
-                <li className="nav-item">
-                  <span className="nav-link">
-                    <span>ABOUT Us</span>
-                  </span>
-                </li>
-              </Link>
-              <Link to="/AllPost" className="link">
-                <li className="nav-item">
-                  <span className="nav-link">BLOG</span>
-                </li>{" "}
-              </Link>
-              <Link to="/" className="link">
-                <li className="nav-item">
-                  <span className="nav-link">
-                    <span> SERVICE </span>
-                  </span>
-                </li>
-              </Link>
-
-              <li className="nav-item">
-                    <div className="dropdown">
-                  <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
-                  My Account
-                  </span>
-                      <ul className="dropdown-menu">
-                      <Link to="/Password" className={"link"}>
-                        <li className={"border-bottom"}><span className="dropdown-item">Logout</span></li>
-                      </Link>
-                       
-                      </ul>
-                    </div>
-                  </li>
-
-              <Link to="/Contact" className="link">
-                <button className="btn bg-light text-dark rounded-pill ">
-                  LET'S TALK
-                </button>
-              </Link>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      
 
 
       <div className="container-fluid bg-light">
@@ -141,10 +74,7 @@ useEffect(() => {
           <option>Food Trends & News</option>
         </select>
         
-      <button>Update Post</button>
-        </div>
-
-      
+      <button>Update Post</button>      
     </div>
   );
 };
