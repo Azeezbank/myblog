@@ -18,7 +18,6 @@ useEffect(() => {
     try {
       const response = await axios.get(`https://backend-i9tl.onrender.com/api/posts/${id}`, {
      setPosts(response.data);
-      });
       console.log(response.data);
     } catch (error) {
       console.error('Error fetching post:', error);
