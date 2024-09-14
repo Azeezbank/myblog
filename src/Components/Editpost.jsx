@@ -29,7 +29,7 @@ useEffect(() => {
   const handleEdit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put('https://backend-i9tl.onrender.com/api/edit/${id}', posts);
+      const response = await axios.put(`https://backend-i9tl.onrender.com/api/edit/${id}`, posts);
       console.log("Post updated successfully");
       if (response.ok) {alert("Post updated successfully");}else {alert('error')}
     } catch (error) {
