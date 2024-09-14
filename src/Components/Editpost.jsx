@@ -152,7 +152,7 @@ useEffect(() => {
         placeholder="Post Content"
         className="form-control"
         id={"content"}
-        row={"5"}
+        rows={"5"}
         required
       ></textarea>
             <div className="valid-feedback mb-3">Valid.</div>
