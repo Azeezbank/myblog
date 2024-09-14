@@ -235,12 +235,12 @@ const Login = () => {
                           <i className="bi  bi-chevron-double-right"></i>{" "}
                         </p>{" "}
                       </Link>
-                      {/* <Link
+                       <Link
                         to={`/Editpost/${post.id}`}
                         className="no-line text-white bg-danger p-1 rounded ms-2"
                       >
                         Edit
-                      </Link>{" "} */}
+                      </Link>{" "}
 
 
                       <button
