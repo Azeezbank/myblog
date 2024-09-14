@@ -237,9 +237,9 @@ const Login = () => {
                       </Link>
                        <Link
                         to={`/Editpost/${post.id}`}
-                        className="no-line text-white bg-danger p-1 rounded ms-2"
                       >
-                        Edit
+                      <button 
+                        className="btn btn-danger ms-1">Edit</button>
                       </Link>{" "}
 
 
