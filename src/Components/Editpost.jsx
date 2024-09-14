@@ -27,7 +27,7 @@ useEffect(() => {
 }, [id]);
 
   return (
-    <div>
+    <>
       
 
 
@@ -76,6 +76,8 @@ useEffect(() => {
         
       <button>Update Post</button>      
     </div>
+
+    </>
   );
 };
 
