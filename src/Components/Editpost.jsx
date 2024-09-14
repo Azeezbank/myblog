@@ -188,7 +188,6 @@ useEffect(() => {
           <option>Healthy Eating</option>
           <option>Food Trends & News</option>
         </select>
-            <div className="valid-feedback mb-3">Valid.</div>
             <div className="invalid-feedback mb-3">Field cannot be empty.</div>
             </div>
         
