@@ -58,13 +58,18 @@ useEffect(() => {
         onChange={(e) => setPosts({ ...posts, user_id: e.target.value})}
         placeholder="Author Email"
       />
-      <select
-        value={posts.category}
-        onChange={(e) => setPosts({...posts, category: e.target.value})}
-        placeholder="Post Category">
+    
+     <label htmlFor="category" className="form-label">
+          Category:*
+        </label>
+        <select id="category" className="form-control mb-3 bg-light" value={posts.category} onChange={(e) => setPosts({...posts, category: e.target.value})}  required>
         <option>~~~</option>
-        <option></option>
-      </select>
+          <option>Recipes & Cooking Tips</option>
+          <option>Restaurant Reviews</option>
+          <option>Healthy Eating</option>
+          <option>Food Trends & News</option>
+        </select>
+        
       <button>Update Post</button>
     </div>
   );
