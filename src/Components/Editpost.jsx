@@ -99,7 +99,7 @@ useEffect(() => {
 
       <div className="container-fluid bg-light pt-5">
         <div className="container bg-white pt-5">
-          <h2 className="text-center text-danger pt-3 mb-3>Edit your post</h2>
+          <h2 className="text-center text-danger pt-3 mb-3">Edit your post</h2>
             
         <form className="bg-white p-4 was-validated">
           <div>
@@ -141,7 +141,7 @@ useEffect(() => {
         className="form-control"
         id={"content"}
         required
-      />
+      ></textarea>
             <div className="valid-feedback mb-3">Valid.</div>
             <div className="invalid-feedback mb-3">Field cannot be empty.</div>
             </div>
