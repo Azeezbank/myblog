@@ -28,7 +28,6 @@ useEffect(() => {
 
   return (
     <>
-      
 <nav className="navbar navbar-expand-md bg-danger bg-gradient fixed-top">
         <div className="container-fluid">
           <span
