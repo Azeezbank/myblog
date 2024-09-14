@@ -31,7 +31,7 @@ useEffect(() => {
     try {
       const response = await axios.put('https://backend-i9tl.onrender.com/api/edit/${id}', posts);
       console.log("Post updated successfully");
-      alert('Post updated successfully");
+      alert("Post updated successfully");
     } catch (error) {
       console.error("Failed to update post", error);
       alert("Failed to update post");
