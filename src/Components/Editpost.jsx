@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const Editpost = ({ postId }) => {
+const Editpost = () => {
   const { id } = useParams();
   const [posts, setPosts] = useState({
     title: "",
