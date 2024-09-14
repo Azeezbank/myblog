@@ -133,7 +133,7 @@ useEffect(() => {
             </div>
 
           <div>
-            <label htmlFor={"content"} className="form-label"> Post contest:*</label>
+            <label htmlFor={"content"} className="form-label"> Post content:*</label>
       <textarea
         value={posts.content}
         onChange={(e) => setPosts({ ...posts, content: e.target.value})}
