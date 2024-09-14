@@ -26,6 +26,18 @@ useEffect(() => {
   handleUpdate();
 }, [id]);
 
+  const handleEdit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.put('https://backend-i9tl.onrender.com/api/edit/${id}', posts);
+      console.log("Post updated successfully");
+      alert('Post updated successfully");
+    } catch (error) {
+      console.error("Failed to update post", error);
+      alert("Failed to update post");
+    }
+  };
+
   return (
     <>
 <nav className="navbar navbar-expand-md bg-danger bg-gradient fixed-top">
@@ -101,7 +113,7 @@ useEffect(() => {
         <div className="container bg-white pt-5">
           <h2 className="text-center text-danger pt-3 mb-3">Edit your post</h2>
             
-        <form className="bg-white p-4 was-validated">
+        <form className="bg-white p-4 was-validated" onSubmit={handleEdit}>
           <div>
             <label htmlFor={"title"} className="form-label"> Post tittl:*</label>
       <input
@@ -192,7 +204,7 @@ useEffect(() => {
             <div className="invalid-feedback mb-3">Field cannot be empty.</div>
             </div>
         
-      <button className="btn btn-danger mb-3 mt-2 rounded p-2" onClick={(e) => {e.preventDefault()}}>Update Post</button>
+      <button type="submit" className="btn btn-danger mb-3 mt-2 rounded p-2">Update Post</button>
           </form>
           </div>
     </div>
