@@ -107,10 +107,8 @@ const Register = () => {
                   </span>
                       <ul className="dropdown-menu">
                       <Link to="/Password" className={"link"}>
-                        <li className={"border-bottom"}><span className="dropdown-item">Login</span></li>
+                        <li className={"border-bottom"}><span className="dropdown-item"><i className="bi bi-person-add"></i> Login</span></li>
                       </Link>
-                       <Link to={"/Register"} className={"link"}> <li><span className={"dropdown-item"}>Register</span></li>
-                       </Link>
                       </ul>
                     </div>
                   </li>
