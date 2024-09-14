@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -35,7 +36,7 @@ useEffect(() => {
             className="navbar-brand"
             style={{ fontSize: "1.6rem", fontWeight: "bold" }}
           >
-        <i class="bi bi-cup-hot"></i>    Bankky <small>Blog.</small>
+         <i class="bi bi-cup-hot"></i>   Bankky <small>Blog.</small>
           </span>
           <button
             className="navbar-toggler bg-light bg-gradient"
@@ -50,9 +51,7 @@ useEffect(() => {
               <hr />
               <Link to="/" className="link">
                 <li className="nav-item">
-                  <span href="." className="nav-link">
-                    HOME
-                  </span>
+                  <span className="nav-link">HOME</span>
                 </li>
               </Link>
               <Link to="/" className="link">
@@ -82,18 +81,17 @@ useEffect(() => {
                   </span>
                       <ul className="dropdown-menu">
                       <Link to="/Password" className={"link"}>
-                        <li className={"border-bottom"}><span className="dropdown-item">Login</span></li>
+                        <li className={"border-bottom"}><span className="dropdown-item">Logout</span></li>
                       </Link>
-                       <Link to={"/Register"} className={"link"}> <li><span className={"dropdown-item"}>Register</span></li>
-                       </Link>
+                       
                       </ul>
                     </div>
                   </li>
 
-              <Link to={'/Contact'}>
-              <button className="btn bg-light text-dark btn- rounded-pill">
-                LET'S TALK
-              </button>
+              <Link to="/Contact" className="link">
+                <button className="btn bg-light text-dark rounded-pill ">
+                  LET'S TALK
+                </button>
               </Link>
             </ul>
           </div>
