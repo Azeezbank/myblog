@@ -104,7 +104,7 @@ const Login = () => {
                   </span>
                       <ul className="dropdown-menu">
                       <Link to="/Password" className={"link"}>
-                        <li className={"border-bottom"}><span className="dropdown-item">Logout</span></li>
+                        <li><span className="dropdown-item"><i className="bi bi-power"></i> Logout</span></li>
                       </Link>
                        
                       </ul>
