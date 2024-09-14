@@ -95,4 +95,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 + Bootstrap for styling.
 + Node.js and Express.js for backend development.
 + MySQL for database management.
+<<<<<<< HEAD
 + Vercel for deployment.
+=======
++ Vercel for deployment.
+>>>>>>> af77116278ffa26d4a3e71109534e667261bcc0f

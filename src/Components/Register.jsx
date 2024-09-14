@@ -257,4 +257,8 @@ const Register = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Register;
+=======
+export default Register;
+>>>>>>> af77116278ffa26d4a3e71109534e667261bcc0f

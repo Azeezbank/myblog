@@ -362,4 +362,8 @@ function AllPost() {
   );
 }
 
+<<<<<<< HEAD
 export default AllPost;
+=======
+export default AllPost;
+>>>>>>> af77116278ffa26d4a3e71109534e667261bcc0f
