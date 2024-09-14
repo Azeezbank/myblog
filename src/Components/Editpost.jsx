@@ -98,8 +98,8 @@ useEffect(() => {
       </nav>
 
       <div className="container-fluid bg-light pt-5">
-      <h2>Edit Post</h2>
-        <div className="container bg-white">
+        <div className="container bg-white pt-3">
+          <h2>Edit your post</h2>
         <form className="bg-white p-4">
       <input
         type="text"
